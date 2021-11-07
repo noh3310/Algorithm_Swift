@@ -7,25 +7,27 @@
 
 import Foundation
 
-func dfs(N: Int, x: Int, y: Int) {
-    // 만약 차수가 0이라면
-    if N == 0 {
-        result += 1
-        
-        if x == r && y == c {
-            print("여기 result = \(result)")
-        }
-        
+import Foundation
+
+func dfs(currentNumber: Int, N: Int, x: Int, y: Int) {
+    if x == r && y == c {
+        print(currentNumber)
         return
     }
     
-    dfs(N: N - 1, x: x, y: y)
-    dfs(N: N - 1, x: x, y: y + Int(pow(Double(2),Double(N - 1))))
-    dfs(N: N - 1, x: x + Int(pow(Double(2),Double(N - 1))), y: y)
-    dfs(N: N - 1, x: x + Int(pow(Double(2),Double(N - 1))), y: y + Int(pow(Double(2),Double(N - 1))))
+    let addNumber = Int(pow(Double(2),Double(N - 1)))
+    let positionNumber = addNumber * addNumber
+    
+    if r < x + addNumber && c < y + addNumber {
+        dfs(currentNumber: currentNumber, N: N - 1, x: x, y: y)
+    } else if r < x + addNumber && c >= y + addNumber {
+        dfs(currentNumber: currentNumber + positionNumber, N: N - 1, x: x, y: y + addNumber)
+    } else if r >= x + addNumber && c < y + addNumber {
+        dfs(currentNumber: currentNumber + positionNumber * 2, N: N - 1, x: x + addNumber, y: y)
+    } else if r >= x + addNumber && c >= y + addNumber {
+        dfs(currentNumber: currentNumber + positionNumber * 3, N: N - 1, x: x + addNumber, y: y + addNumber)
+    }
 }
-
-var result = -1
 
 let numbers = readLine()!.split(separator: " ").compactMap { Int(String($0))! }
 
@@ -33,4 +35,4 @@ let N = numbers[0]
 let r = numbers[1]
 let c = numbers[2]
 
-dfs(N: N, x: 0, y: 0)
+dfs(currentNumber: 0, N: N, x: 0, y: 0)
