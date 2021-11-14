@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 func dfs(currentNumber: Int, N: Int, x: Int, y: Int) {
     if x == r && y == c {
         print(currentNumber)

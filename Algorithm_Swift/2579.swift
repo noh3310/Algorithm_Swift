@@ -1,8 +1,8 @@
 //
-//  main.swift
+//  2579.swift
 //  Algorithm_Swift
 //
-//  Created by 노건호 on 2021/10/09.
+//  Created by 노건호 on 2021/11/14.
 //
 
 import Foundation
