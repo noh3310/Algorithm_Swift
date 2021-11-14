@@ -7,8 +7,8 @@
 
 import Foundation
 
-// N + (N - 1) + f(N - 3)
-// N + f(N - 2)
+// N + (N - 1) + dp(N - 3)
+// N + dp(N - 2)
 func dp() -> Int {
     var dpValue = Array(repeating: 0, count: N + 1)
     dpValue[1] = stairs[1]
