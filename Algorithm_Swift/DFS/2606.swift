@@ -39,3 +39,4 @@ dfs(position: 1)
 var resultArray = computers.filter { $0 == true }
 // 1번 노드는 포함시키지 않으므로 -1 해줌
 print(resultArray.count - 1)
+ 
