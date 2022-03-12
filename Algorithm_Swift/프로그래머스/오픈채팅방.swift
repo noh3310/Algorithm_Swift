@@ -7,6 +7,8 @@
 
 import Foundation
 
+// 시간복잡도 2N
+// record배열 2번 순회함
 func solution(_ record: [String]) -> [String] {
     var result: [String] = []
     var dic: [String: String] = [:]
