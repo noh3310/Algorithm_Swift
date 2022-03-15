@@ -7,12 +7,12 @@
 
 import Foundation
 
-enum RecordType: String {
+private enum RecordType: String {
     case IN
     case OUT
 }
 
-struct Record: Comparable {
+private struct Record: Comparable {
     let number: String
     let time: Int
     let type: RecordType

@@ -7,7 +7,6 @@
 
 import Foundation
 
-// 시간복잡도 2N(report 2번 순회)
 func solution(_ id_list:[String], _ report:[String], _ k:Int) -> [Int] {
     var dic = [String:Int]()
     var reportList: [[String]] = Array(repeating: [], count: id_list.count)
