@@ -64,7 +64,7 @@ private func dfs(_ position: Int, _ array: [Int], _ n: Int) {
     
     // 다음 과녁으로 넘어가는 것
     for i in 0...n {
-        // 쏠 화살 개수가 남아있다면 && 어피치보다 1점 많을떄까지만 화살 쏨
+        // 쏠 화살 개수가 남아있다면
         if n - i >= 0 {
             var temp = array
             temp[position] = i
