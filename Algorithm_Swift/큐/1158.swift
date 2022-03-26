@@ -17,7 +17,7 @@ var index = size
 while array.count > 0 {
     let removeValue = array.remove(at: index)
     result.append(removeValue)
-    
+
     if array.count > 0 {
         index = (index + size) % array.count
     }
