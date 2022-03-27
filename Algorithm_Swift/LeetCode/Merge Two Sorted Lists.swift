@@ -19,18 +19,18 @@ import Foundation
  */
 class Solution {
     func addList(_ list: ListNode?, _ currentPos: ListNode?, _ addValue: Int) -> (ListNode?, ListNode?) {
-        var tempList = list
-        var currentPosition = currentPos
+        var list = list
+        var currentPos = currentPos
         
-        if tempList == nil {
-            tempList = ListNode(addValue)
-            currentPosition = tempList
+        if list == nil {
+            list = ListNode(addValue)
+            currentPos = list
         } else {
-            currentPosition?.next = ListNode(addValue)
-            currentPosition = currentPosition?.next
+            currentPos?.next = ListNode(addValue)
+            currentPos = currentPos?.next
         }
         
-        return (tempList, currentPosition)
+        return (list, currentPos)
     }
     
     func mergeTwoLists(_ list1: ListNode?, _ list2: ListNode?) -> ListNode? {
@@ -54,18 +54,16 @@ class Solution {
         }
         
         if node1 == nil {
-            while node2 != nil {
-                if let value = node2?.val {
-                    (result, currentPosition) = addList(result, currentPosition, value)
-                    node2 = node2?.next
-                }
+            if result == nil {
+                result = node2
+            } else {
+                currentPosition?.next = node2
             }
         } else {
-            while node1 != nil {
-                if let value = node1?.val {
-                    (result, currentPosition) = addList(result, currentPosition, value)
-                    node1 = node1?.next
-                }
+             if result == nil {
+                result = node1
+            } else {
+                currentPosition?.next = node1
             }
         }
         
