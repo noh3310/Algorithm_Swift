@@ -25,12 +25,7 @@ func bfs() -> Int {
     
     var result = 0
     var index = 0
-    while !queue.isEmpty {
-        // 큐에서 하나 빼기
-        if queue.count == index {
-            break
-        }
-
+    while index < queue.count {
         let (i, j, k, count) = queue[index]
         index += 1
 
